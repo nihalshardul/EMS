@@ -1,0 +1,162 @@
+
+-- Api's For emp:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/emp'
+output =>   {"status":200,"data":[["17143","Mitali","Narkhede","Devloper","mitali.narkhede@gmail.com","Mitali@123","500","0","0","0"],["17153","Nihal","Shardul","Owner","nihal.shardul@gmail.com","Nihal@647","50000000","0","0","0"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/emp/17153'
+output =>   {"status":200,"data":{"id":17153,"first_name":"Nihal","last_name":"Shardul","designation":"Owner","email":"nihal.shardul@gmail.com","password":"Nihal@647","salary":50000000,"lvs":0,"is_emp_root":0,"updated_by":0}}
+
+curl -X POST -d '{"id":17153,"first_name":"Nihal","last_name":"Shardul","designation":"Owner","email":"nihal.shardul@gmail.com","password":"Nihal@647","salary":50000000,"contact_number":"7840904676","ubdated_by":0}' http://localhost:9090/webapi/v1/emp
+output =>   {"status":200,"data":{"id":17153,"first_name":"Nihal","last_name":"Shardul","designation":"Owner","email":"nihal.shardul@gmail.com","password":"Nihal@647","salary":50000000,"lvs":0,"is_emp_root":0,"updated_by":0}}
+
+curl -X PUT -d '{"id":17143,"first_name":"Mitali","last_name":"Narkhede","designation":"Devloper","email":"mitali.narkhede@gmail.com","password":"Mitali@123","salary":500,"contact_number":"9547584597","ubdated_by":0}' http://localhost:9090/webapi/v1/emp/17143
+output =>   {"status":200,"data":[["17143","Mitali","Narkhede","Devloper","mitali.narkhede@gmail.com","Mitali@123","500","0","0","0"],["17153","Nihal","Shardul","Owner","nihal.shardul@gmail.com","Nihal@647","50000000","0","0","0"]]}
+
+
+-- Api's For groups:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/groups'
+output =>   {"status":200,"data":[["5","NS","0"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/groups/5'
+output =>   {"status":200,"data":{"id":5,"group_name":"NS","updated_by":0}}
+
+curl -X POST -d '{"id":5,"group_name":"NS" ,"updated_by":0}' http://localhost:9090/webapi/v1/groups
+output =>   {"status":200,"data":{"id":5,"group_name":"NS","updated_by":0}}
+
+curl -X PUT -d '{"id":2,"group_name":"Mitali_Narkhede","updated_by":0}' http://localhost:9090/webapi/v1/groups/2
+output =>   {"status":200,"data":{"id":2,"group_name":"Mitali_Narkhede","updated_by":0}}
+
+
+-- Api's For task:
+
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/task'
+output => {"status":200,"data":[["1","MN","Good Going !!!","0","0","0"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/task/1'
+output => {"status":200,"data":{"id":1,"task_name":"Aavar Lavkr","comment":"Good Going !!!","pending":0,"complete":0,"updated_by":0}}
+
+curl -X POST -d '{"id":1,"task_name":"MN","comment":"Good Going !!!"}' http://localhost:9090/webapi/v1/task
+output => {"status":200,"data":{"id":1,"task_name":"MN","comment":"Good Going !!!","pending":0,"complete":0,"updated_by":0}}
+
+
+curl -X PUT -d '{"id":1,"task_name":"Aavar Lavkr","comment":"Good Going !!!"}' http://localhost:9090/webapi/v1/task/1
+output => {"status":200,"data":{"id":1,"task_name":"Aavar Lavkr","comment":"Good Going !!!","pending":0,"complete":0,"updated_by":0}}
+
+
+-- Api's for notice:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/notice'
+output =>   {"status":200,"data":[["1","Yess I am Awesome!!!"]]}nihal@nihal-pucsd:~/go/src/github.com/backend$ 
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/notice/1'
+output =>   {"status":200,"data":{"id":1,"info":"Yess I am Awesome!!!"}}
+
+curl -X POST -d '{"id":1,"info":"You Are Awesome!!!"}' http://localhost:9090/webapi/v1/notice
+output =>   {"status":200,"data":{"id":1,"info":"You Are Awesome!!!"}}
+
+
+curl -X PUT -d '{"id":1,"info":"Yess I am Awesome!!!"}' http://localhost:9090/webapi/v1/notice/1
+output =>   {"status":200,"data":{"id":1,"info":"Yess I am Awesome!!!"}}
+
+
+-- Api's for attendance:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/attendance'
+output => {"status":200,"data":[["1","17153","2020-05-22 00:00:00"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/attendance/1'
+output => {"status":200,"data":{"id":1,"emp_id":17153,"attend_date":"2020-05-22 00:00:00"}}
+
+curl -X POST -d '{"id":2,"emp_id":17143,"attend_date":"2020/05/23"}' http://localhost:9090/webapi/v1/attendance
+output => {"status":200,"data":{"id":2,"emp_id":17143,"attend_date":"2020/05/23"}}
+
+curl -X PUT -d '{"id":2,"emp_id":17143,"attend_date":"2020/05/20"}' http://localhost:9090/webapi/v1/attendance/2
+output => {"status":200,"data":{"id":2,"emp_id":17143,"attend_date":"2020/05/20"}}
+
+
+
+-- Api's for leaves:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/leaves'
+output =>   {"status":200,"data":[["1","17143","2020-05-22","2020-05-26"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/leaves/1'
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"from_date":"2020-05-22","to_date":"2020-05-26"}}
+
+curl -X POST -d '{"id":1,"emp_id":17143,"from_date":"2020/05/23","to_date":"2020/05/26"}' http://localhost:9090/webapi/v1/leaves
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"from_date":"2020/05/23","to_date":"2020/05/26"}}
+
+curl -X PUT -d '{"id":1,"emp_id":17143,"from_date":"2020/05/22","to_date":"2020/05/26"}' http://localhost:9090/webapi/v1/leaves/1
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"from_date":"2020/05/22","to_date":"2020/05/26"}}
+
+
+-- Api's for query:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/query'
+output =>   {"status":200,"data":[["1","17143","Mala Kahich nahi samjat a.."]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/query/1'
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"comment":"Mala Kahich nahi samjat a.."}}
+
+curl -X POST -d '{"id":1,"emp_id":17143,"comment":"He kaay challey"}' http://localhost:9090/webapi/v1/query
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"comment":"He kaay challey"}}
+
+curl -X PUT -d '{"id":1,"emp_id":17143,"comment":"Mala Kahich nahi samjat a.."}' http://localhost:9090/webapi/v1/query/1
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"comment":"Mala Kahich nahi samjat a.."}}
+
+
+-- Api's for ans_to_query:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/ans_to_query'
+output =>   {"status":200,"data":[["1","1","Dama Dam Mast Kalandar"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/ans_to_query/1'
+output =>   {"status":200,"data":{"id":1,"q_id":1,"comment":"Dama Dam Mast Kalandar"}}
+
+curl -X POST -d '{"id":1,"q_id":1,"comment":"Hum he YUM..."}' http://localhost:9090/webapi/v1/ans_to_query
+output =>   {"status":200,"data":{"id":1,"q_id":1,"comment":"Hum he YUM..."}}
+
+curl -X PUT -d '{"id":1,"q_id":1,"comment":"Dama Dam Mast Kalandar"}' http://localhost:9090/webapi/v1/ans_to_query/1
+output =>   {"status":200,"data":{"id":1,"q_id":1,"comment":"Dama Dam Mast Kalandar"}}
+
+
+
+-- Api's for emp_group:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/emp_group'
+output =>   {"status":200,"data":[["1","2","17153"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/emp_group/1'
+output =>   {"status":200,"data":{"id":1,"gid":2,"emp_id":17153}}
+
+curl -X POST -d '{"id":1,"gid":2,"emp_id":17153}' http://localhost:9090/webapi/v1/emp_group
+output =>   {"status":200,"data":{"id":1,"gid":2,"emp_id":17153}}
+
+
+-- Api's for group_task:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/group_task'
+output =>   {"status":200,"data":[["1","5","1"],["2","5","1"],["3","2","2"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/group_task/1'
+output =>   {"status":200,"data":{"id":1,"gid":5,"tsk_id":1}}
+
+curl -X POST -d '{"id":3,"gid":2,"tsk_id":2}' http://localhost:9090/webapi/v1/group_task
+output =>   {"status":200,"data":{"id":3,"gid":2,"tsk_id":2}}
+
+-- Api's for login:
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/login'
+output =>   {"status":200,"data":[["1","17143","2020-05-22"]]}
+
+curl --location --request GET 'http://localhost:9090/webapi/v1/login/1'
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"login_date":"2020-05-22"}}
+
+curl -X POST -d '{"id":1,"emp_id":17153,"login_date":"2020/05/22"}' http://localhost:9090/webapi/v1/login
+output =>   {"status":200,"data":{"id":1,"emp_id":17153,"login_date":"2020/05/22"}}
+
+curl -X PUT -d '{"id":1,"emp_id":17143,"login_date":"2020/05/22"}' http://localhost:9090/webapi/v1/login/1
+output =>   {"status":200,"data":{"id":1,"emp_id":17143,"login_date":"2020/05/22"}}
