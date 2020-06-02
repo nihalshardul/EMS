@@ -1,0 +1,27 @@
+<div class="container">
+    <header>
+        <div class="logo_img">
+            <img src="/assets/logo.jpg" alt="logo" id="logo">
+        </div>
+        <div class="header_data">
+            <h1> <strong> Access Control System Managment </strong></h1>
+        </div>
+    </header>
+    <div class="body_area">
+        <div class="row">
+            <div class="col-md-2" id="optn">
+                <div *ngIf="message">
+                    <app-sidebar></app-sidebar>
+                </div>
+            </div>
+            <div id="main" class="col-md-9">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
+
+    <footer class="fixed-bottom">
+        Nihal Shardul
+    </footer>
+</div>

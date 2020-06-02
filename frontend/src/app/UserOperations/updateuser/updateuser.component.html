@@ -1,0 +1,54 @@
+<!-- <p>update works!</p> -->
+
+<h2>Update</h2>
+<br>
+<form id="newuser" name="newuser" #updateuser="ngForm" (ngSubmit) = put(updateuser.value)>
+    
+    <table>
+        <tr>
+            <td id="field">User Id :</td>
+            <td>
+                <input type="text" name="id" id="id" placeholder="id" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">First Name :</td>
+            <td>
+                <input type="text" name="first_name" id="first_name" placeholder="first_name" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">Last Name :</td>
+            <td>
+                <input type="text" name="last_name" id="last_name" placeholder="last_name" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">Email :</td>
+            <td>
+                <input type="text" name="email" id="email" placeholder="email" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">Password :</td>
+            <td>
+                <input type="text" name="password" id="password" placeholder="password" ngModel><br>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <button type="submit" >Update User</button>            
+            </td>
+            <td>
+
+                <button type="reset" > Reset</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+
+<h3 *ngIf="isUpdated">{{Confirmation}}</h3>

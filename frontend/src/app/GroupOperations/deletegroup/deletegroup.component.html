@@ -1,0 +1,29 @@
+<!-- <p>delete works!</p> -->
+
+<h2>Delete</h2>
+
+<form id="delgroup" name="delgroup" #deletegroup="ngForm" (ngSubmit) = delete()>
+    <table>
+        <tr>
+            <td>
+                Group id:
+            </td>
+            <td>
+                <input type="text" name="id" id="id" placeholder="id" (keyup)=id($event)>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                <button type="submit">Delete</button>
+            </td>
+            <td>
+                <button type="reset">Reset</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+
+<h3 *ngIf="isdel">{{Confirmation}}</h3>

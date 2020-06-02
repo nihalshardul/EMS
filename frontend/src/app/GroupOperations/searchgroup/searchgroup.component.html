@@ -1,0 +1,29 @@
+
+Search
+<input type="text" (keyup)=id($event)>
+<button (click)="getbyid()">Submit</button>
+<button id="all" type="submit" class="btn btn-primary" (click)=getall() >All Groups</button>
+<br>
+
+<div *ngIf="byid==false">
+    <div class="card-columns" >
+        <div class="card" *ngFor="let group of arr">
+            <div id="cd" class="card-body" >
+                <h1>Id : {{group.id}}</h1>
+                <h4>{{group.groups_name}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="byid==true">
+    <div class="card-columns">
+        <div class="card" >
+            <div id="cd" class="card-body" >
+                <h1>Id : {{g_id}}</h1>
+                <h4>{{g_name}}</h4>
+            </div>
+        </div>
+    </div>
+</div>

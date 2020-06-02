@@ -1,0 +1,34 @@
+<h1>Add Users to group</h1>
+<br>
+<form id="usergroup" name="usergroup" #connectgroup="ngForm" (ngSubmit)=post(connectgroup.value)>
+
+    <table>
+        <tr>
+            <td id="field">Group Id :</td>
+            <td>
+                <input type="text" name="id" id="id" placeholder="id" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">User Id :</td>
+            <td>
+                <input type="text" name="user_id" id="user_id" placeholder="user_id" ngModel><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="submit">Create Group</button>
+            </td>
+            <td>
+
+                <button type="reset"> Reset</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+
+<h3 *ngIf="isAdded">{{Confirmation}}</h3>

@@ -1,0 +1,22 @@
+<div class="row" id="log">
+  <div class="col-sm-4 text-center abc">
+      <!-- Default form login -->
+      <form id="loginuser" name="loginuser" #createuser="ngForm" (ngSubmit) = validation(createuser.value)>
+          <p class="h4 mb-4 text-left">Login to continue</p>
+          <p class="text-left">Signin to create, discover and connect to ACL</p> 
+          <!-- Email --> 
+          <label for="mail" class="in">User Id:</label> 
+          <input type="email" id="id" name="id" class="form-control mb-4" placeholder="Enter email" ngModel> 
+          <!-- Password --> 
+          <label for="pass" class="in">Password</label> 
+          <input type="password" id="password" name="password" class="form-control mb-4" placeholder="Enter Password" ngModel>
+          <!-- Sign in button --> 
+          <button class="btn btn-info btn-block " type="submit" style="background-image: url(/assets/bg.png)">LOGIN</button>           
+      </form>
+  </div>
+  <div class="col-sm-8 xyz text-center" style="background-image: url(/assets/bg.png)"> 
+    <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+      <h2 class="account-text">Create Your Account</h2>
+      <h4 class="account-description">Signup to create, discover and connect with the global community</h4>
+  </div>
+</div>

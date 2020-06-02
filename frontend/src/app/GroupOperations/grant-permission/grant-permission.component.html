@@ -1,0 +1,47 @@
+<h1>Group - Resource Permission</h1>
+<br>
+<form id="groupres" name="groupres" #groupper="ngForm" (ngSubmit)=post(groupper.value)>
+
+    <table>
+        <tr>
+            <td id="field">Resource Id :</td>
+            <td>
+                <input type="text" name="resource_id" id="resource_id" placeholder="resource_id" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">Group Id :</td>
+            <td>
+                <input type="text" name="id" id="id" placeholder="id" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">Permission :</td>
+            <td>
+                <input type="radio" name="permission" value="read" ngModel>Read
+            </td>
+            <br>
+            <td>
+                <input type="radio" name="permission" value="write" ngModel>Write
+            </td>
+            <br>
+            <td>
+                <input type="radio" name="permission" value="execute" ngModel>Execute
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Give Permission</button>
+            </td>
+            <td>
+
+                <button type="reset"> Reset</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+
+<h3 *ngIf="isAdded">{{Confirmation}}</h3>

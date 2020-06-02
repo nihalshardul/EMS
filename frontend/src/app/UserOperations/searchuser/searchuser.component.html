@@ -1,0 +1,35 @@
+
+Search
+<input type="text" (keyup)=id($event)>
+<button (click)="getbyid()">Submit</button>
+<button id="all" type="submit" class="btn btn-primary" (click)=getall() >All Users</button>
+<br>
+
+<div *ngIf="byid==false">
+    <div class="card-columns" >
+        <div class="card" *ngFor="let user of arr">
+            <div id="cd" class="card-body" >
+                <h1>Id : {{user.id}}</h1>
+                <h4>{{user.first_name}}</h4>
+                <h5>{{user.last_name}}</h5>
+                <!-- <td>{{user.email}}</td>
+                <td>{{user.contact_number}}</td> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="byid==true">
+    <div class="card-columns">
+        <div class="card">
+            <div id="cd" class="card-body" >
+                <h1>Id : {{u_id}}</h1>
+                <h4>{{u_f_name}}</h4>
+                <h5>{{u_l_name}}</h5>
+                <!-- <td>{{user.email}}</td>
+                <td>{{user.contact_number}}</td> -->
+            </div>
+        </div>
+    </div>
+</div>

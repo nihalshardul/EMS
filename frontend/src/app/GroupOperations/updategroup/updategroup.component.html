@@ -1,0 +1,35 @@
+<!-- <p>update works!</p> -->
+
+<h2>Update</h2>
+<br>
+<form id="newGroup" name="newGroup" #updateGroup="ngForm" (ngSubmit) = put(updateGroup.value)>
+    
+    <table>
+        <tr>
+            <td id="field">Group Id :</td>
+            <td>
+                <input type="text" name="id" id="id" placeholder="id" ngModel><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="field">Group Name :</td>
+            <td>
+                <input type="text" name="group_name" id="group_name" placeholder="group_name" ngModel><br>
+            </td>
+        </tr>        
+        <tr>
+            <td>
+                <button type="submit" >Update Group</button>            
+            </td>
+            <td>
+
+                <button type="reset" > Reset</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+
+<h3 *ngIf="isUpdated">{{Confirmation}}</h3>

@@ -1,0 +1,40 @@
+<div>
+    <div *ngIf="user_root">
+        <div class="dropdown" id="wid">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                User Operations
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/searchuser" routerLinkActive="active">Search User</a>
+                <a class="dropdown-item" routerLink="/createuser" routerLinkActive="active">Create User</a>
+                <a class="dropdown-item" routerLink="/updateuser" routerLinkActive="active">Update User</a>
+                <a class="dropdown-item" routerLink="/deleteuser" routerLinkActive="active">Delete User</a>
+            </div>
+        </div>
+        <div class="dropdown" id="wid">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Group Operations
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/searchgroup" routerLinkActive="active">Search Group</a>
+                <a class="dropdown-item" routerLink="/creategroup" routerLinkActive="active">Create Group</a>
+                <a class="dropdown-item" routerLink="/updategroup" routerLinkActive="active">Update Group</a>
+                <a class="dropdown-item" routerLink="/deletegroup" routerLinkActive="active">Delete Group</a>
+                <a class="dropdown-item" routerLink="/membership" routerLinkActive="active">Membership</a>
+                <a class="dropdown-item" routerLink="/grouppermission" routerLinkActive="active">Permission</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown" id="wid">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Resources Operations
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/listresources" routerLinkActive="active">List Resources</a>
+            <a class="dropdown-item" routerLink="/createresources" routerLinkActive="active">Create Resources</a>
+            <a class="dropdown-item" routerLink="/deleteresource" routerLinkActive="active">Delete Resources</a>
+        </div>
+    </div>
+</div>
+
